@@ -4,10 +4,11 @@ import {
   makeStyles,
   Typography,
   Button,
+  Avatar,
 } from "@material-ui/core";
 import axios from "axios";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { selectedUser } from "../../components/redux/actions/userActions";
 import {
   setMessage,
@@ -17,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -36,15 +38,24 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     marginTop: "50px",
+    width: "100%",
   },
   input: {
     display: "flex",
     justifyContent: "center",
-    width: "50%",
+    width: "30%",
     marginBottom: "10px",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  link: {
+    textDecoration: "none",
+    color: "inherit",
   },
 }));
 
@@ -112,8 +123,13 @@ const Login = () => {
 
   return (
     <Container className={classes.container}>
+      <span className={classes.heading}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+      </span>
       <Typography variant="h5" className={classes.heading}>
-        Login
+        Sign in
       </Typography>
       <form
         className={classes.form}
@@ -148,8 +164,14 @@ const Login = () => {
           className={classes.input}
           onClick={handleSubmit}
         >
-          Login
+          Sign in
         </Button>
+        <Link to="/forgot-password" className={classes.link}>
+          Forgot password
+        </Link>
+        <Link to="/register" className={classes.link}>
+          Don't have an account? Sign Up
+        </Link>
       </form>
       {message && (
         <Snackbar

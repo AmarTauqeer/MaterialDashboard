@@ -95,7 +95,7 @@ const Sidebar = () => {
           <div className={classes.item}>
             <ExitToAppIcon className={classes.icon} />
             <Typography className={classes.text} onClick={handleClick}>
-              Logout
+              Sign out
             </Typography>
           </div>
         </>
@@ -118,14 +118,14 @@ const Sidebar = () => {
           <Link to="/register" className={classes.link}>
             <div className={classes.item}>
               <AccountCircleIcon className={classes.icon} />
-              <Typography className={classes.text}>Register</Typography>
+              <Typography className={classes.text}>Sign up</Typography>
             </div>
           </Link>
 
           <Link to="/login" className={classes.link}>
             <div className={classes.item}>
               <VpnKeyIcon className={classes.icon} />
-              <Typography className={classes.text}>Login</Typography>
+              <Typography className={classes.text}>Sign in</Typography>
             </div>
           </Link>
         </>

@@ -70,6 +70,11 @@ export default function ProfileMenu() {
     setAnchorEl(null);
   };
 
+  const handlClick = () => {
+    history.push("/change-password");
+    setAnchorEl(null);
+  };
+
   return (
     <div>
       <Avatar src={UserAvatar} alt="user-avatar" onClick={handleClick} />
@@ -90,13 +95,13 @@ export default function ProfileMenu() {
           <ListItemIcon>
             <VpnKeyIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary="Change Password" onClick={handleClose} />
+          <ListItemText primary="Change Password" onClick={handlClick} />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
             <ExitToAppIcon />
           </ListItemIcon>
-          <ListItemText primary="Logout" onClick={handleLogout} />
+          <ListItemText primary="Sign out" onClick={handleLogout} />
         </StyledMenuItem>
       </StyledMenu>
     </div>

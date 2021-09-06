@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   input: {
     display: "flex",
     justifyContent: "center",
-    width: "50%",
+    width: "30%",
     marginBottom: "10px",
     [theme.breakpoints.down("sm")]: {
       width: "100%",

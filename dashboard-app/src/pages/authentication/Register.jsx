@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { addUser } from "../../components/redux/actions/userActions";
 import {
   setMessage,
@@ -37,11 +37,15 @@ const useStyles = makeStyles((theme) => ({
   input: {
     display: "flex",
     justifyContent: "center",
-    width: "50%",
+    width: "30%",
     marginBottom: "10px",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
+  },
+  link: {
+    textDecoration: "none",
+    color: "inherit",
   },
 }));
 
@@ -129,7 +133,7 @@ const Register = () => {
   return (
     <Container className={classes.container}>
       <Typography variant="h5" className={classes.heading}>
-        Register
+        Sign up
       </Typography>
       <form className={classes.form} noValidate autoComplete="off">
         <TextField
@@ -168,6 +172,9 @@ const Register = () => {
         >
           Signup
         </Button>
+        <Link to="/login" className={classes.link}>
+          Already have an account? Sign In
+        </Link>
       </form>
       {message && (
         <Snackbar

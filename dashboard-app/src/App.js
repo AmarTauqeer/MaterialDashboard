@@ -22,6 +22,7 @@ import {
   removeSelectedUser,
   setUser,
 } from "./components/redux/actions/userActions";
+import ChangePassword from "./pages/authentication/ChangePassword";
 
 function App() {
   const user_name = useSelector((state) => state.allUsers.users.user_name);
@@ -46,6 +47,11 @@ function App() {
               <div>
                 <Route path="/category" exact component={CategoryList} />
                 <Route path="/add-category" exact component={AddCategory} />
+                <Route
+                  path="/change-password"
+                  exact
+                  component={ChangePassword}
+                />
                 <Route
                   path="/edit-category/:id"
                   exact
